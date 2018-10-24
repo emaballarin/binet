@@ -13,8 +13,9 @@ from cffi import FFI
 # Decides on installation time if MKL or GSL should be used!
 
 ffi = FFI()
-mkldir = "/opt/intel/mkl/lib/intel64/"
-mkl_incdir = "/opt/intel/mkl/include/"
+mklroot = os.environ["MKLROOT"]
+mkldir = "${MKLROOT}/lib/intel64"
+mkl_incdir = "${MKLROOT}/include"
 
 # some machine specific paths for bioinf@jku machines
 if not os.path.exists(mkldir):
